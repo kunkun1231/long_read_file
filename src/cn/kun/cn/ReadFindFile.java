@@ -403,6 +403,8 @@ public class ReadFindFile {
 						publish("完成");
 					}
 				}else{
+					enter.setVisible(true);
+					cancel.setVisible(false);
 					publish("关键字一共:"+size);
 				}
 				return null;

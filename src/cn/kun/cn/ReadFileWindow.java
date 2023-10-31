@@ -90,7 +90,8 @@ public class ReadFileWindow extends JFrame {
 				String start = startDate.getText();
 				String end = endDate.getText();
 				ruslutlabel.setText("正在查询...请稍候");
-
+				String regex = "[0-9]{3}";
+				
 				ruslutlabel.updateUI();
 
 				if ("".equals(start) && "".equals(end)) {
@@ -98,11 +99,13 @@ public class ReadFileWindow extends JFrame {
 							&& !"".equals(creatFile)) {
 
 						try {
-
-							ReadFindFile.findSwingWork(file, find,
-									Integer.parseInt(line), isPrint, creatFile,
-									ruslutlabel, button,button1);
-
+							if(line.matches(regex)){
+								ReadFindFile.findSwingWork(file, find,
+										Integer.parseInt(line), isPrint, creatFile,
+										ruslutlabel, button,button1);
+							}else{
+								ruslutlabel.setText("行数请输入数字");
+							}
 						} catch (Exception e1) {
 							e.paramString();
 						}
