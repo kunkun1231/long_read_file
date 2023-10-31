@@ -379,7 +379,7 @@ public class ReadFindFile {
 				List<Integer> findDataList = findDataFile(file, find);
 				int size = findDataList.size();
 				enter.setVisible(false);
-				cancel.setVisible(true);
+				cancel.setVisible(true); 
 				System.out.println("正在出文件");
 				if (isPrint) {
 					if (isPrint && findDataList.size() > 0) {
